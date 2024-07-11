@@ -1,0 +1,67 @@
+--Creating a database for Shirts
+CREATE DATABASE IF NOT EXISTS shirts;          
+
+--Using Shirts database to work on current database
+USE Shirts_DB;
+
+--Creates a table called Shirts with fields are Shirt_ID, Article, Color, ShirtSize with respective Datatypes
+CREATE TABLE Shirts
+(
+    Shirt_ID INT NOT NULL PRIMARY KEY,
+    Article STRING,
+    Color STRING,
+    ShirtSize CHAR(2)
+);         
+
+-- Inserting Values into the table
+INSERT INTO SHIRTS
+Values
+(1, 'T-Shirt', 'White', 'S'),
+(2, 'T-Shirt', 'Green', 'S'),
+(3, 'Polo shirt', 'Black', 'M'),
+(4, 'Tank top', 'Blue', 'S'),
+(5, 'T-Shirt', 'Pink', 'S'),
+(6, 'Polo shirt', 'Red', 'M'),
+(7, 'Tank top', 'White', 'S'),
+(8, 'Tank top', 'Blue', 'M');        
+
+-- Reading the table
+SELECT * FROM shirts;        
+
+-- inserting values to the table
+INSERT INTO shirts
+VALUES
+(9, 'Polo Shirt', 'Purple', 'M');         
+
+-- Reading table with Article and color fields only
+SELECT * FROM shirts; 
+SELECT Article, COLOR FROM SHIRTS;        
+
+-- Reading table with shirtSize "M"
+SELECT * FROM SHIRTS
+WHERE ShirtSize = 'M';           
+
+-- Updating 'polo shirts' size to 'L'
+UPDATE Shirts SET ShirtSize = 'L'
+WHERE Article = 'Polo shirt';         
+
+SELECT * FROM shirts;
+
+UPDATE Shirts SET ShirtSize = 'L'
+WHERE Article = 'Polo shirt';  
+
+SELECT * FROM SHIRTS;
+
+-- Updating white color shirts to color = off white and shirt size = xl
+UPDATE SHIRTS SET Color = 'Off White', ShirtSize = 'XL'
+WHERE Color = 'White';        
+
+SELECT * FROM Shirts;
+
+-- Deleting tank top shirts field
+DELETE FROM SHIRTS WHERE ARTICLE = 'Tank top';        
+SELECT * FROM SHIRTS;
+
+-- deleting shirts table
+DELETE FROM SHIRTS;         
+SELECT * FROM SHIRTS;`
