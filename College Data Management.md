@@ -6,6 +6,7 @@ Create a Database called `College Database` and table `StudentDetails`
 
 CREATE DATABASE College_Database;
 
+USE DATABASE College_Database;
 
 -- Now create tables of each department on Students, Faculty and Library.
 
