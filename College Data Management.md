@@ -43,6 +43,7 @@ CREATE TABLE Library (
     BookCode VARCHAR(20),
     FacultyID INT,
     Rollnumber INT,
+    Fine INT,
     FOREIGN KEY (FacultyID) REFERENCES FacultyDetails(FacultyID),
     FOREIGN KEY (Rollnumber) REFERENCES StudentDetails(Rollnumber)
 );
@@ -53,6 +54,7 @@ Now altering the table to add one more row to the `library` table,
 ```
 
 ALTER TABLE Library
-ADD COLUMN ReturnDate DATE;
+ADD COLUMN ReturnDate DATE,
+ADD COLUMN TakenDate DATE;
 
 ```
